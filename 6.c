@@ -3,11 +3,15 @@
 
 int reach(long x, long y, long steps)
 {
+    steps++;
     if(x > y)
         return 0;
     if(x == y)
-        return steps+1;
-     return reach(2*x, y, steps+1) | reach(10*x+1, y, steps+1);
+        return steps;
+    if(y % 2)
+        return ((y-1) % 10 ? 0 : reach(x, (y-1)/10, steps));
+    else
+        return reach(x, y/2, steps);
 }
 
 int main()
