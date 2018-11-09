@@ -45,7 +45,7 @@ int main()
     for(i = 0; i < m; i++)
     {
         scanf("%d %d", &p, &q);
-        g1[p][q] = g1[q][p] = 1;
+        g1[p][q] = 1;
     }
     scanf("%d %d", &p, &q);
     if(p != n || q != m)
@@ -53,7 +53,7 @@ int main()
     for(i = 0; i < m; i++)
     {
         scanf("%d %d", &p, &q);
-        g2[p][q] = g2[q][p] = 1;
+        g2[p][q] = 1;
     }
     permute(idx, 0);
     printf("%s\n", (ans ? "Yes" : "No"));
